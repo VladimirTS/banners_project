@@ -1,0 +1,6 @@
+<%= form_for @image_banner do |f| %>
+  <%= render partial: "partials/common_form", locals: {f: f, banner: @image_banner}%>
+  <br>
+  <%= f.file_field "file"%><br>
+  <%= f.submit "Edit"%>
+<% end %>

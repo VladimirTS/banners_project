@@ -1,0 +1,52 @@
+<%= f.label :controller %> <br>
+<div>
+  <ul class="controller">
+    <% getHashControllers.each do |controller, actions| %>
+      <li>
+        <%= radio_button_tag "image_banner[controllers]", controller%>
+        <%= controller %>
+      <div class="actions">
+        <ul>
+          <% actions.each do |action| %>
+            <li><%= radio_button_tag 'image_banner[actions]', action%>
+              <%= action %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    </li>
+  </ul>
+</div>
+
+<br>
+<br>
+<%= f.label :position %>
+<% ['top', 'bottom', 'middle', 'right'].each do |position| %>
+  <br><%= check_box_tag "image_banner[positions][]", position, get_array_positions(banner).include?(position)%>
+  <%= position.humanize %>
+<% end %>
+
+<br>
+<br>
+<%= f.label :property_type %>
+<% ['residential', 'commercial', 'land', 'garage'].each do |property_type| %>
+  <br><%= radio_button_tag 'image_banner[property_type]', property_type,  property_type == banner.property_type %>
+  <%= property_type.humanize %>
+<% end %>
+
+<br>
+<br>
+<%= f.label :deal_kind %>
+<% ['sale', 'rent'].each do |deal_kind| %>
+  <br><%= radio_button_tag 'image_banner[deal_kind]', deal_kind, deal_kind == banner.deal_kind %>
+  <%= deal_kind.humanize %>
+<% end %>
+
+<br>
+<br>
+<%= f.label :deal_direction %>
+<% ['offer', 'demand'].each do |deal_direction| %>
+  <br><%= radio_button_tag 'image_banner[deal_direction]', deal_direction, deal_direction == banner.deal_direction %>
+  <%= deal_direction.humanize %>
+<% end %>
