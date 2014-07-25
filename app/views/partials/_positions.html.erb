@@ -1,0 +1,14 @@
+<div class="position">
+  <div class="top">
+    <%= render partial: "partials/widget", locals: { banner: @banner_positions[:top]}%>
+  </div>
+  <div class="middle">
+    <%= render partial: "partials/widget", locals: { banner: @banner_positions[:middle]}%>
+  </div>
+  <div class="right">
+    <%= render partial: "partials/widget", locals: { banner: @banner_positions[:right]}%>
+  </div>
+  <div class="bottom">
+    <%= render partial: "partials/widget", locals: { banner: @banner_positions[:bottom]}%>
+  </div>
+</div>

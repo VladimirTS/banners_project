@@ -1,5 +1,5 @@
 <%= form_for @flash_banner do |f| %>
-  <%= render partial: "partials/common_form", locals: {f: f, banner: @flash_banner}%>
+  <%= render partial: "partials/common_fields", locals: {f: f, banner: @flash_banner, banner_name: "flash_banner"}%>
   <br>
   <%= f.file_field "file"%><br>
   <%= f.submit "Create"%>

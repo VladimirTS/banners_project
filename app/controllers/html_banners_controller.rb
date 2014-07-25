@@ -49,14 +49,14 @@ class HtmlBannersController < ApplicationController
 
   def html_banner_params
     params.require(:html_banner).permit(:controller,  :property_type,
-                                         :deal_kind,   :deal_direction,
-                                         :action_name, :file)
+                                        :deal_kind,   :deal_direction,
+                                        :action_name, :html)
   end
 
   def add_position_to_banner
     if params[:html_banner][:positions]
       params[:html_banner][:positions].each do |position|
-        Position.create(position: position, banner_id: @html_banner.id)
+        Position.create(banner_id: @html_banner.id, value: position)
       end
     end
   end

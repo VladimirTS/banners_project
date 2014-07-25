@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20140723110519) do
     t.integer "banner_id"
     t.string  "banner_type"
     t.string  "controller"
+    t.string  "action"
     t.string  "property_type"
     t.string  "deal_kind"
     t.string  "deal_direction"
     t.integer "count_display"
-    t.string  "action_name"
   end
 
   create_table "flash_banners", force: true do |t|
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140723110519) do
   end
 
   create_table "html_banners", force: true do |t|
+    t.string "html"
   end
 
   create_table "image_banners", force: true do |t|
@@ -45,7 +46,7 @@ ActiveRecord::Schema.define(version: 20140723110519) do
 
   create_table "positions", force: true do |t|
     t.integer "banner_id"
-    t.string  "position"
+    t.string  "value"
   end
 
 end

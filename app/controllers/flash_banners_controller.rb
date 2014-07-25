@@ -1,5 +1,6 @@
 class FlashBannersController < ApplicationController
   def index
+
   end
 
   def show

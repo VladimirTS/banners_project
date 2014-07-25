@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   resources :flash_banners, :html_banners, :image_banners
+
+  get "tests/:property_type/:deal_kind/:deal_direction" => 'tests#all_record'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

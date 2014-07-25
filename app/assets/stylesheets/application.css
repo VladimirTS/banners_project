@@ -23,4 +23,8 @@ ul.controller,
     list-style-type: none;
 }
 
+div.top {
+  margin: 0 auto;
+}
+
 
