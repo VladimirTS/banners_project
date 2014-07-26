@@ -1,6 +1,10 @@
 class Banner < ActiveRecord::Base
-  has_many   :positions
+
   belongs_to :ban, polymorphic: true
+
+  has_many   :positions
+
+  validates  :controller, presence: true
 
   class << self
 
