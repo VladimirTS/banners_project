@@ -1,1 +1,7 @@
-<%= image_tag @image_banner.file.url(:medium) %>
+<div class="image_file">
+  <a href=<%= @image_banner.url %>>
+    <%= image_tag @image_banner.file.url(:medium) %>
+  </a>
+</div>
+
+

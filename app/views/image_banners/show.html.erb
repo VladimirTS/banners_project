@@ -1,6 +1,12 @@
-<%= @image_banner.controller %><br>
-<%= @image_banner.deal_kind %><br>
-<%= @image_banner.deal_direction %><br>
-<%= @image_banner.property_type %><br>
-<%= image_tag @image_banner.file.url(:medium) %>
+<div class="show">
+  <%= render partial: "partials/show_common_fields", locals: {banner: @image_banner}%>
+  <div class="image_file">
+    <a href=<%= @image_banner.url %>>
+    <%= image_tag @image_banner.file.url(:medium) %>
+    </a>
+  </div>
+  <div class="url">
+    Url: <%= @image_banner.url %>
+  </div>
+</div>
 

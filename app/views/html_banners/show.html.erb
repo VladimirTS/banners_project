@@ -1,7 +1,9 @@
-<%= @html_banner.controller %><br>
-<%= @html_banner.deal_kind %><br>
-<%= @html_banner.deal_direction %><br>
-<%= @html_banner.property_type %><br>
-<%= @html_banner.html.html_safe %><br>
+<div class="show">
+  <%= render partial: "partials/show_common_fields", locals: {banner: @html_banner}%>
+  <div class="html_content">
+    HTML content: <%= @html_banner.html.html_safe %>
+  </div>
+</div>
+
 
 
