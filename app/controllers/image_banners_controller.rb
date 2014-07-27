@@ -40,6 +40,11 @@ class ImageBannersController < ApplicationController
     redirect_to "/admin"
   end
 
+  def increase_count
+    @image_banner = ImageBanner.find(params[:id])
+    @image_banner.increment!(:click_count)
+  end
+
   private
 
     def find_banner

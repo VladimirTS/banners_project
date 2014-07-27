@@ -20,4 +20,14 @@ $(function () {
     $(".actions").css("display","none");
     $(this).children(".actions").css("display","block");
   });
+
+  $(".image_file img").bind("click", function(e) {
+    id = $(".image_file").data("id");
+    $.ajax({
+      url: "/image_banners/increase_count",
+      type: "post",
+      dataType: "json",
+      data: { id: id}
+    });
+  })
 });

@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20140723110519) do
 
   create_table "image_banners", force: true do |t|
     t.string   "url"
-    t.string   "click_count"
+    t.integer  "click_count"
     t.string   "file_file_name"
     t.string   "file_content_type"
     t.integer  "file_file_size"

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root to: "static_pages#home"
 
-  resources :flash_banners, :html_banners, :image_banners
+  resources :flash_banners, :html_banners
+
+  resources :image_banners
+
+  post "image_banners/increase_count" => "image_banners#increase_count"
 
   get "admin" => "admin#index"
 
