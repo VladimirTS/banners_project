@@ -1,3 +1,0 @@
-class TestSaveController < ApplicationController
-
-end
