@@ -15,6 +15,7 @@ module ApplicationHelper
   end
 
   def widget(banner)
+    banner.increment!(:count_display)
     case banner.banner_type
     when "ImageBanner"
       @image_banner = ImageBanner.find(banner.banner_id)
