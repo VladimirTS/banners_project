@@ -1,6 +1,11 @@
-<%= form_for @image_banner do |f| %>
-  <%= render partial: "partials/common_fields", locals: {f: f, banner: @image_banner, banner_name: "image_banner"}%>}%>
-  <br>
-  <%= f.file_field "file"%><br>
-  <%= f.submit "Edit"%>
-<% end %>
+<div class="create-edit-banner">
+  <%= form_for @image_banner do |f| %>
+      <%= render partial: "partials/common_fields", locals: {f: f, banner: @image_banner, banner_name: "image_banner"}%>
+
+      <%= f.label :url%><br>
+      <%= f.text_field :url%><br>
+
+      <%= f.file_field "file"%><br>
+      <%= f.submit "Edit"%>
+  <% end %>
+</div>
