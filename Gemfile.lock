@@ -27,6 +27,13 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    activevalidators (2.1.0)
+      activemodel (>= 3.0.0)
+      countries (~> 0.9.3)
+      date_validator
+      mail
+      phony (>= 1.9.0)
+      rake (>= 0.8.7)
     arel (5.0.1.20140414130214)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
@@ -46,6 +53,11 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.1)
+    countries (0.9.3)
+      currencies (~> 0.4.2)
+    currencies (0.4.2)
+    date_validator (0.7.0)
+      activemodel (>= 3)
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.2.1)
@@ -69,6 +81,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    phony (2.2.13)
     polyglot (0.3.5)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -129,6 +142,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activevalidators
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)

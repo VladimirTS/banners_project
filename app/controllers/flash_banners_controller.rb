@@ -1,4 +1,5 @@
 class FlashBannersController < ApplicationController
+
   def index
 
   end
@@ -38,14 +39,15 @@ class FlashBannersController < ApplicationController
   def destroy
     @flash_banner = ImageBanner.find(params[:id])
     @flash_banner.destroy
+    redirect_to "/admin"
   end
 
   private
 
     def flash_banner_params
-      params.require(:flash_banner).permit(:controller, :position,
-                                         :property_type, :deal_kind,
-                                         :deal_direction, :action_name,
-                                         :file)
+      params.require(:flash_banner).permit(:controller,    :position,
+                                           :property_type, :deal_kind,
+                                           :deal_direction, :action,
+                                           :file)
     end
 end

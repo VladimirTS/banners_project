@@ -43,14 +43,15 @@ class HtmlBannersController < ApplicationController
   def destroy
     @html_banner = HtmlBanner.find(params[:id])
     @html_banner.destroy
+    redirect_to "/admin"
   end
 
   private
 
   def html_banner_params
-    params.require(:html_banner).permit(:controller,  :property_type,
-                                        :deal_kind,   :deal_direction,
-                                        :action_name, :html)
+    params.require(:html_banner).permit(:controller, :property_type,
+                                        :deal_kind,  :deal_direction,
+                                        :action,     :html)
   end
 
   def add_position_to_banner

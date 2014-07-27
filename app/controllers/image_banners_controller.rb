@@ -1,5 +1,6 @@
 class ImageBannersController < ApplicationController
   before_action :find_banner, only: [:show, :edit, :update, :destroy]
+
   def index
 
   end
@@ -11,6 +12,8 @@ class ImageBannersController < ApplicationController
   end
 
   def create
+    @image_banner = ImageBanner.new(image_banner_params)
+
     if @image_banner.save
       add_position_to_banner
       redirect_to @image_banner
@@ -34,6 +37,7 @@ class ImageBannersController < ApplicationController
 
   def destroy
     @image_banner.destroy
+    redirect_to "/admin"
   end
 
   private
@@ -42,14 +46,15 @@ class ImageBannersController < ApplicationController
       begin
         @image_banner = ImageBanner.find(params[:id])
       rescue ActiveRecord::RecordNotFound
-        redirect "/"
+        redirect_to "/"
       end
     end
 
     def image_banner_params
       params.require(:image_banner).permit(:controller, :property_type,
                                            :deal_kind,  :deal_direction,
-                                           :action,     :file)
+                                           :action,     :file,
+                                           :url)
     end
 
     def add_position_to_banner

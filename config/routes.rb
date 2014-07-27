@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :flash_banners, :html_banners, :image_banners
 
   get "admin" => "admin#index"
-  
+
   controller :test_one do
     get "test_one(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_one#all_record"
     get "test_one(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_one#test_two"

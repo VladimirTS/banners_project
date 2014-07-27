@@ -2,7 +2,7 @@ class Banner < ActiveRecord::Base
 
   belongs_to :ban, polymorphic: true
 
-  has_many   :positions
+  has_many   :positions, :dependent => :destroy
 
   validates  :controller, presence: true
 

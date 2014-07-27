@@ -20,11 +20,93 @@
 
 ul.controller,
 .actions ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
-div.top {
+.common_fields div {
+  margin-bottom: 10px;
+}
+
+.create-edit-banner {
   margin: 0 auto;
+  width: 550px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 15px;
 }
 
+.show .url {
+  background-color: #DCDCDC;
+  padding: 5px;
+  width: 500px;
+  border-radius: 5px;
+}
 
+.show div {
+  margin: 5px 0 ;
+}
+
+div.top, div.middle, div.right, div.bottom{
+  width: 250px;
+  height: 250px;
+  margin: 10px;
+}
+
+div.top, div.bottom {
+  margin: 10px auto;
+}
+
+.center div {
+  display: inline-block;
+}
+
+div.right {
+  float: right;
+}
+
+div.middle {
+
+}
+
+.panel {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.create_banner {
+  margin: 0 auto;
+  width: 330px;
+}
+
+.create_banner span {
+  font-size: 18px;
+}
+
+.create_banner ul {
+  list-style: none;
+  background-color: #474747;
+  border-radius: 8px;
+  height:25px;
+  width: 330px;
+  padding: 10px;
+  text-align: center;
+}
+
+.create_banner ul li {
+  display: inline;
+  padding-left: 10px;
+}
+
+.create_banner ul a{
+  color:white;
+}
+
+table {
+  width: 100%;
+}
+table th,
+table td {
+  border: 2px solid black;
+  padding: 5px;
+  margin: 0;
+}

@@ -1,0 +1,34 @@
+<div class="panel">
+  <div class="create_banner">
+    <span>Create banner: </span>
+    <ul>
+      <li><%= link_to "Image", "image_banners/new"%></li>
+      <li><span><%= link_to "Html",  "html_banners/new"%></li></span>
+      <li><%= link_to "Flash", "flash_banners/new"%></li>
+    </ul>
+  </div>
+  <div class="admin_banners">
+    <% unless @banners.empty?%>
+    <table>
+      <th> № </th>
+      <th> Banner Type</th>
+      <th> Controller</th>
+      <th> Action</th>
+      <th> Edit</th>
+      <th> Remove</th>
+      <% number = 0 %>
+      <% @banners.each do |banner|%>
+        <tr>
+          <td><%= number = number + 1 %></td>
+          <td><%= banner.banner_type %></td>
+          <td><%= banner.controller %></td>
+          <td><%= banner.action %></td>
+          <td><%= link_to "Edit", "#{banner.banner_type.underscore}s/#{banner.banner_id}/edit"%></td>
+          <td><%= link_to "Remove", "#{banner.banner_type.underscore}s/#{banner.banner_id}", data: {confirm: "Are you sure?"}, method: :delete
+          %></td>
+        </tr>
+      <% end %>
+    </table>
+    <% end %>
+  </div>
+</div>
