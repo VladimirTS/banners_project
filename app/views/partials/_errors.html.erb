@@ -1,0 +1,10 @@
+<div class="errors">
+  <% if banner.errors.any? %>
+      <h2><%= pluralize(banner.errors.count, "error") %> prohibited this banner from being saved:</h2>
+      <ul>
+        <% banner.errors.full_messages.each do |msg| %>
+            <li><%= p msg %></li>
+        <% end %>
+      </ul>
+  <% end %>
+</div>
