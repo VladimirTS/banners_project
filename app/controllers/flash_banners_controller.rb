@@ -63,10 +63,4 @@ class FlashBannersController < ApplicationController
         end
       end
     end
-
-    def remove_old_positions(banner_type)
-      banner_type.banner.positions.each do |position|
-        position.destroy
-      end
-    end
 end

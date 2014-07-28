@@ -1,11 +1,12 @@
 class TestTwoController < ApplicationController
   before_action :choose_banners
 
-  def all_record; end
+  def first_method; end
 
-  def test_two; end
+  def second_method; end
 
-  def test_three; end
+  def third_method; end
 
-  def test_four; end
+  def fours_method; end
+
 end

@@ -48,23 +48,18 @@ class HtmlBannersController < ApplicationController
 
   private
 
-  def html_banner_params
-    params.require(:html_banner).permit(:controller, :property_type,
-                                        :deal_kind,  :deal_direction,
-                                        :action,     :html)
-  end
+    def html_banner_params
+      params.require(:html_banner).permit(:controller, :property_type,
+                                          :deal_kind,  :deal_direction,
+                                          :action,     :html)
+    end
 
-  def add_position_to_banner
-    if params[:html_banner][:positions]
-      params[:html_banner][:positions].each do |position|
-        Position.create(banner_id: @html_banner.id, value: position)
+    def add_position_to_banner
+      if params[:html_banner][:positions]
+        params[:html_banner][:positions].each do |position|
+          Position.create(banner_id: @html_banner.id, value: position)
+        end
       end
     end
-  end
 
-  def remove_old_positions(obj_banner)
-    obj_banner.banner.positions.each do |position|
-      position.destroy
-    end
-  end
 end
