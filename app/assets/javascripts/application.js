@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree .
 
 $(function () {
@@ -29,5 +30,17 @@ $(function () {
       dataType: "json",
       data: { id: id}
     });
-  })
+  });
+
+  var prevState = null;
+  var prevVal   = null;
+  $("input[type = 'radio']").bind("click", function () {
+    if (prevState == null) {
+      prevState = 1;
+      prevVal   = $(this);
+    } else {
+      prevState = null;
+      prevVal.prop('checked', false);
+    }
+  });
 });

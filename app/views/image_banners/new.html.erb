@@ -1,4 +1,6 @@
 <div class="create-edit-banner">
+  <%= render partial: "partials/errors", locals: {banner: @image_banner}%>
+
   <%= form_for @image_banner do |f| %>
     <%= render partial: "partials/common_fields", locals: {f: f, banner: @image_banner, banner_name: "image_banner"}%>
       

@@ -1,7 +1,7 @@
 <div class="show">
   <%= render partial: "partials/show_common_fields", locals: {banner: @flash_banner}%>
   <div class="flash_object">
-    Flash_file: <%= @flash_banner.file %>
+    <embed src="<%= asset_path(@flash_banner.file) %>" width='250' height='250' />
   </div>
 </div>
 

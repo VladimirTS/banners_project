@@ -7,4 +7,5 @@ class ImageBanner < ActiveRecord::Base
 
   validates_attachment_content_type :file,  content_type: /^image\/(png|gif|jpeg)/
   validates  :url, url: true
+  validates  :file, presence: true
 end
