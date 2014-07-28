@@ -9,21 +9,25 @@ Rails.application.routes.draw do
 
   get "admin" => "admin#index"
 
-  controller :test_one do
+  property_type  = /residential|commercial|land|garage/
+  deal_kind      = /sale|rent/
+  deal_direction = /offer|demand/
+
+  controller :test_one, property_type: property_type, deal_kind: deal_kind, deal_direction: deal_direction do
     get "test_one(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_one#all_record"
     get "test_one(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_one#test_two"
     get "test_one(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_one#test_three"
     get "test_one(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_one#test_four"
   end
 
-  controller :test_two do
+  controller :test_two, property_type: property_type, deal_kind: deal_kind, deal_direction: deal_direction  do
     get "test_two(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_two#all_record"
     get "test_two(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_two#test_two"
     get "test_two(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_two#test_three"
     get "test_two(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_two#test_four"
   end
 
-  controller :test_three do
+  controller :test_three, property_type: property_type, deal_kind: deal_kind, deal_direction: deal_direction  do
     get "test_three(/:property_type)(/:deal_kind)(/:deal_direction)" => "test_three#all_record"
     get "test_three(/:property_type)(/:deal_kind)(/:deal_direction)" => "test_three#test_two"
     get "test_three(/:property_type)(/:deal_kind)(/:deal_direction)" => "test_three#test_three"
