@@ -1,6 +1,11 @@
 <div class="controller">
   Controller:<%= banner.controller %>
 </div>
+<% if banner.action %>
+  <div class="deal_action">
+    Action: <%= banner.action%>
+  </div>
+<% end %>
 <div class="deal_kind">
   Deal kind: <%= banner.deal_kind %>
 </div>
