@@ -21,7 +21,8 @@ module ApplicationHelper
       @image_banner = ImageBanner.find(banner.banner_id)
       render "image_banners/part_banner"
     when "FlashBanner"
-      render text: "FlashBanner"
+      @flash_banner = FlashBanner.find(banner.banner_id)
+      render "flash_banners/part_banner"
     else
       @html_banner = HtmlBanner.find(banner.banner_id)
       render "html_banners/part_banner"
