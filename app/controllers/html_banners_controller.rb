@@ -57,7 +57,7 @@ class HtmlBannersController < ApplicationController
     def add_position_to_banner
       if params[:html_banner][:positions]
         params[:html_banner][:positions].each do |position|
-          Position.create(banner_id: @html_banner.id, value: position)
+          Position.create(banner_id: @html_banner.banner.id, value: position)
         end
       end
     end

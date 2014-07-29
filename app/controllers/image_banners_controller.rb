@@ -66,7 +66,7 @@ class ImageBannersController < ApplicationController
     def add_position_to_banner
       if params[:image_banner][:positions]
         params[:image_banner][:positions].each do |position|
-          Position.create(banner_id: @image_banner.id, value: position)
+          Position.create(banner_id: @image_banner.banner.id, value: position)
         end
       end
     end

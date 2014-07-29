@@ -59,7 +59,7 @@ class FlashBannersController < ApplicationController
     def add_position_to_banner
       if params[:flash_banner][:positions]
         params[:flash_banner][:positions].each do |position|
-          Position.create(banner_id: @flash_banner.id, value: position)
+          Position.create(banner_id: @flash_banner.banner.id, value: position)
         end
       end
     end
