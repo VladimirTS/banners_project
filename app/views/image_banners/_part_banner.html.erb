@@ -1,5 +1,5 @@
 <div class="image_file" data-id=<%= @image_banner.id %>>
-  <a href=<%= @image_banner.url %>>
+  <a href="/image_banners/<%= @image_banner.id %>/increase">
     <%= image_tag @image_banner.file.url(:medium) %>
   </a>
 </div>

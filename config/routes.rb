@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   resources :flash_banners, :html_banners
 
-  resources :image_banners
-
-  post "image_banners/increase_count" => "image_banners#increase_count"
+  resources :image_banners do
+    get "increase", action: :inc_click_count_and_redir_url, on: :member
+  end
 
   get "admin" => "admin#index"
 

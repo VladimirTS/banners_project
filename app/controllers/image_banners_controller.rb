@@ -1,5 +1,5 @@
 class ImageBannersController < ApplicationController
-  before_action :find_banner, only: [:show, :edit, :update, :destroy]
+  before_action :find_banner, only: [:show, :edit, :update, :destroy, :inc_click_count_and_redir_url]
 
   def index
 
@@ -40,9 +40,10 @@ class ImageBannersController < ApplicationController
     redirect_to "/admin"
   end
 
-  def increase_count
-    @image_banner = ImageBanner.find(params[:id])
+  # increment count click and redirect on necessary url
+  def inc_click_count_and_redir_url
     @image_banner.increment!(:click_count)
+    redirect_to @image_banner.url
   end
 
   private
