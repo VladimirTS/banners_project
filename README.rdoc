@@ -29,9 +29,6 @@ Please feel free to use a different markup language if you do not plan to run
 
 
 1. Переписать на form object форма создание баннеров
-2. Кеширование контроллеров (при инициализации)
 3. Simplare Form
-4. Acts as relation
-4. Редирект баннеров через контроллер
-5. Верска
+5. Верстка
 6. Модель позиций переделать на many-to-many

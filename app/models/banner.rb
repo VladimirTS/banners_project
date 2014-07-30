@@ -1,12 +1,25 @@
 class Banner < ActiveRecord::Base
-
-  belongs_to :ban, polymorphic: true
+  acts_as_superclass :as => :producible
 
   has_many   :positions, :dependent => :destroy
 
   validates  :controller, presence: true
 
   class << self
+
+    def add_positions(positions, banner_id)
+      if positions
+        positions.each do |pos|
+          Position.create(banner_id: banner_id, value: pos)
+        end
+      end
+    end
+
+    def remove_positions(banner_type)
+      banner_type.banner.positions.each do |position|
+        position.destroy
+      end
+    end
 
     def get_banners(params)
       # params:
@@ -33,17 +46,10 @@ class Banner < ActiveRecord::Base
 
       banners.each do |banner|
         if (@cur_controller == banner.controller) && (banner.action.nil? || banner.action == @cur_action)
-          banner_positions = banner.positions
-          banner_positions.each do |pos|
-            if pos.value == "top"
-              @positions[:top]  << banner
-            elsif pos.value == "middle"
-              @positions[:middle] << banner
-            elsif pos.value == "right"
-              @positions[:right] << banner
-            else
-              @positions[:bottom] << banner
-            end
+
+          banner.positions.each do |position|
+            # position value may be top, middle, right, bottom
+            @positions[position.value.to_sym]  << banner
           end
         end
       end

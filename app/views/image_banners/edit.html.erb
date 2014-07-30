@@ -1,11 +1,10 @@
 <div class="create-edit-banner">
-  <%= form_for @image_banner do |f| %>
+  <%= simple_form_for @image_banner do |f| %>
       <%= render partial: "partials/common_fields", locals: {f: f, banner: @image_banner, banner_name: "image_banner"}%>
 
-      <%= f.label :url%><br>
-      <%= f.text_field :url%><br>
+      <%= f.input :url%><br>
 
-      <%= f.file_field "file"%><br>
-      <%= f.submit "Edit"%>
+      <%= f.input "File", :as => :file %><br>
+      <%= f.button :submit, :class => "btn-primary"%>
   <% end %>
 </div>

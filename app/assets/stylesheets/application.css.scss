@@ -14,6 +14,9 @@
  *= require_self
  */
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 .actions {
   display: none;
 }
@@ -76,37 +79,25 @@ div.middle {
 .create_banner {
   margin: 0 auto;
   width: 330px;
-}
-
-.create_banner span {
-  font-size: 18px;
+  span {
+    font-size: 18px;
+  }
 }
 
 .create_banner ul {
   list-style: none;
   background-color: #474747;
   border-radius: 8px;
-  height:25px;
+  height: 45px;
   width: 330px;
   padding: 10px;
   text-align: center;
+  li {
+    display: inline;
+    padding-left: 10px;
+  }
+  a {
+    color:white;
+  }
 }
 
-.create_banner ul li {
-  display: inline;
-  padding-left: 10px;
-}
-
-.create_banner ul a{
-  color:white;
-}
-
-table {
-  width: 100%;
-}
-table th,
-table td {
-  border: 2px solid black;
-  padding: 5px;
-  margin: 0;
-}

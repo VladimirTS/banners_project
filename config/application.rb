@@ -21,5 +21,25 @@ module Banners
     # config.i18n.default_locale = :de
     config.autoload_paths += %W(#{config.root}/lib)
     config.action_controller.perform_caching = true
+
+
+    config.after_initialize do
+      dir =  Dir.new("app/controllers/test_controllers")
+      controllers = dir.entries.delete_if {|x| x == ".." || x == "."}
+      test_controllers = controllers.map do |controller|
+        controller.sub!(".rb", "").camelcase
+      end
+
+      @controllers = {}
+
+      ApplicationController.subclasses.each do |controller|
+        if test_controllers.include?(controller.to_s)
+          controller_name = controller.to_s.sub("Controller", "")
+          @controllers[controller_name] = controller.action_methods.to_a
+        end
+      end
+
+      Rails.cache.write("controllers", @controllers)
+    end
   end
 end

@@ -1,5 +1,5 @@
 class ImageBanner < ActiveRecord::Base
-  acts_as_banner
+  acts_as :banner, :as => :producible
 
   has_attached_file :file, styles: { medium:"250x250#",
                                      thumb: "100x100#" },

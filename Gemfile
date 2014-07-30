@@ -7,6 +7,7 @@ gem 'rails', '4.1.1'
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+gem 'bootstrap-sass', '~> 3.2.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -34,6 +35,10 @@ group :development do
 end
 
 gem "activevalidators"
+gem "simple_form"
+
+gem 'acts_as_relation', '~> 1.0'
+gem "virtus"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

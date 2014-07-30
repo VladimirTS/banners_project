@@ -4,13 +4,12 @@
     <ul class="controller">
       <% get_hash_controllers.each do |controller, actions| %>
         <li>
-          <% clear_controller_name = controller.to_s[0..-11] %>
-          <%= radio_button_tag "#{banner_name}[controller]", clear_controller_name %>
-          <%= clear_controller_name %>
+          <%= f.radio_button :controller, controller %>
+          <%= controller %>
           <div class="actions">
             <ul>
               <% actions.each do |action| %>
-                <li><%= radio_button_tag "#{banner_name}[action]", action%>
+                <li><%= f.radio_button :action, action%>
                   <%= action %>
                 </li>
               <% end %>
@@ -33,7 +32,7 @@
   <div class="property_type">
     <%= f.label :property_type %><br>
     <% ['residential', 'commercial', 'land', 'garage'].each do |property_type| %>
-    <%= radio_button_tag "#{banner_name}[property_type]", property_type,  property_type == banner.property_type %>
+    <%= f.radio_button :property_type, property_type %>
       <%= property_type.humanize %>
     <% end %>
   </div>
@@ -41,7 +40,7 @@
   <div class="deal_kind">
     <%= f.label :deal_kind %>
     <% ['sale', 'rent'].each do |deal_kind| %><br>
-      <%= radio_button_tag "#{banner_name}[deal_kind]", deal_kind, deal_kind == banner.deal_kind %>
+      <%= f.radio_button :deal_kind, deal_kind %>
       <%= deal_kind.humanize %>
     <% end %>
   </div>
@@ -49,7 +48,7 @@
   <div class="deal_direction">
     <%= f.label :deal_direction %><br>
     <% ['offer', 'demand'].each do |deal_direction| %>
-      <%= radio_button_tag "#{banner_name}[deal_direction]", deal_direction, deal_direction == banner.deal_direction %>
+      <%= f.radio_button :deal_direction, deal_direction%>
       <%= deal_direction.humanize %>
     <% end %>
   </div>

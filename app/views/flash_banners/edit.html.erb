@@ -1,8 +1,8 @@
 <div class="create-edit-banner">
-  <%= form_for @flash_banner do |f| %>
+  <%= simple_form_for @flash_banner do |f| %>
     <%= render partial: "partials/common_fields", locals: {f: f, banner: @flash_banner, banner_name: "flash_banner"}%>
 
     <%= f.file_field "file"%><br>
-    <%= f.submit "Edit"%>
+    <%= f.button :submit, :class => "btn-primary"%>
   <% end %>
 </div>

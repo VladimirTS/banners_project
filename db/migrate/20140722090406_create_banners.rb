@@ -1,8 +1,8 @@
 class CreateBanners < ActiveRecord::Migration
   def change
-    create_table :banners do |t|
-      t.integer :banner_id
-      t.string  :banner_type
+    create_table :banners, :as_relation_superclass => true do |t|
+      t.integer :producible_id
+      t.string  :producible_type
       t.string  :controller
       t.string  :action
       t.string  :property_type

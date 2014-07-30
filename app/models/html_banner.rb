@@ -1,5 +1,5 @@
 class HtmlBanner < ActiveRecord::Base
-  acts_as_banner
+  acts_as :banner, :as => :producible
 
   validates :html, presence: true
 end

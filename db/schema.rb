@@ -14,8 +14,10 @@
 ActiveRecord::Schema.define(version: 20140723110519) do
 
   create_table "banners", force: true do |t|
-    t.integer "banner_id"
-    t.string  "banner_type"
+    t.integer "as_banner_id"
+    t.string  "as_banner_type"
+    t.integer "producible_id"
+    t.string  "producible_type"
     t.string  "controller"
     t.string  "action"
     t.string  "property_type"

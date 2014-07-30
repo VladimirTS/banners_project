@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root to: "static_pages#home"
 
-  resources :flash_banners, :html_banners
+  resources :flash_banners, except: [:index]
+  resources :html_banners,  except: [:index]
 
-  resources :image_banners do
+  resources :image_banners, except: [:index] do
     get "increase", action: :inc_click_count_and_redir_url, on: :member
   end
 

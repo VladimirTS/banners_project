@@ -1,5 +1,5 @@
 class FlashBanner < ActiveRecord::Base
-  acts_as_banner
+  acts_as :banner, :as => :producible
 
   has_attached_file :file
 

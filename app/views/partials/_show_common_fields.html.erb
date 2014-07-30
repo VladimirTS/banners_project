@@ -1,17 +1,32 @@
 <div class="controller">
   Controller:<%= banner.controller %>
 </div>
+
 <% if banner.action %>
   <div class="deal_action">
     Action: <%= banner.action%>
   </div>
 <% end %>
+
+<div class="positions">
+  Positions:
+  <% unless banner.positions.empty? %>
+    <ul>
+      <% banner.positions.each do |pos|%>
+        <li><%= pos.value %></li>
+      <% end %>
+    </ul>
+  <%end%>
+</div>
+
 <div class="deal_kind">
   Deal kind: <%= banner.deal_kind %>
 </div>
+
 <div class="deal_direction">
   Deal Direction:<%= banner.deal_direction %>
 </div>
+
 <div class="property_type">
   Property type:<%=  banner.property_type %>
 </div>

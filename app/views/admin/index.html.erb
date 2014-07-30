@@ -9,25 +9,31 @@
   </div>
   <div class="admin_banners">
     <% unless @banners.empty?%>
-    <table>
-      <th> № </th>
-      <th> Banner Type</th>
-      <th> Controller</th>
-      <th> Action</th>
-      <th> Edit</th>
-      <th> Remove</th>
-      <% number = 0 %>
-      <% @banners.each do |banner|%>
+    <table class="table table-hover">
+      <thead>
         <tr>
-          <td><%= number = number + 1 %></td>
-          <td><%= banner.banner_type %></td>
-          <td><%= banner.controller %></td>
-          <td><%= banner.action %></td>
-          <td><%= link_to "Edit", "#{banner.banner_type.underscore}s/#{banner.banner_id}/edit"%></td>
-          <td><%= link_to "Remove", "#{banner.banner_type.underscore}s/#{banner.banner_id}", data: {confirm: "Are you sure?"}, method: :delete
-          %></td>
+          <th> № </th>
+          <th> Banner Type</th>
+          <th> Controller</th>
+          <th> Action</th>
+          <th> Edit</th>
+          <th> Remove</th>
         </tr>
-      <% end %>
+      </thead>
+      <tbody>
+        <% number = 0 %>
+        <% @banners.each do |banner|%>
+          <tr class="active">
+            <td><%= number = number + 1 %></td>
+            <td><%= banner.producible_type %></td>
+            <td><%= banner.controller %></td>
+            <td><%= banner.action %></td>
+            <td><%= link_to "Edit", "#{banner.producible_type.underscore}s/#{banner.producible_id}/edit"%></td>
+            <td><%= link_to "Remove", "#{banner.producible_type.underscore}s/#{banner.producible_id}", data: {confirm: "Are you sure?"}, method: :delete
+            %></td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
     <% end %>
   </div>
