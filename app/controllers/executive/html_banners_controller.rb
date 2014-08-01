@@ -8,12 +8,12 @@ class HtmlBannersController < ApplicationController
   end
 
   def create
-    @html_banner = HtmlBanner.new(html_banner_params)
+    @html_form = HtmlForm.new(html_banner_params)
 
-    if @html_banner.save
-      Banner.add_positions(params[:html_banner][:positions], @html_banner.banner.id)
-      redirect_to @html_banner
+    if @html_form.save
+      redirect_to @html_form.banner
     else
+      @html_banner = @html_form.banner
       render "new"
     end
   end
@@ -21,18 +21,18 @@ class HtmlBannersController < ApplicationController
   def edit; end
 
   def update
-    if @html_banner.update_attributes(html_banner_params)
-      Banner.remove_positions(@html_banner)
-      Banner.add_positions(params[:html_banner][:positions], @html_banner.banner.id)
-      redirect_to @html_banner
+    @html_form = HtmlForm.new(@html_banner)
+
+    if @html_form.update_attributes(html_banner_params)
+      redirect_to @html_form.banner
     else
+      @html_banner = @html_form.banner
       render "edit"
     end
   end
 
   def destroy
-    @html_banner = HtmlBanner.find(params[:id])
-    @html_banner.destroy
+    HtmlForm(@html_banner).destroy
     redirect_to "/admin"
   end
 
@@ -49,6 +49,7 @@ class HtmlBannersController < ApplicationController
     def html_banner_params
       params.require(:html_banner).permit(:controller, :property_type,
                                           :deal_kind,  :deal_direction,
-                                          :action,     :html)
+                                          :action,     :html,
+                                          :positions => [])
     end
 end

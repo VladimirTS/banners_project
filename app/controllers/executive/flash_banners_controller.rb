@@ -8,12 +8,12 @@ class FlashBannersController < ApplicationController
   end
 
   def create
-    @flash_banner = FlashBanner.new(flash_banner_params)
+    @flash_form = FlashForm.new(flash_banner_params)
 
-    if @flash_banner.save
-      Banner.add_positions(params[:flash_banner][:positions], @flash_banner.banner.id)
-      redirect_to @flash_banner
+    if @flash_form.save
+      redirect_to @flash_form.banner
     else
+      @flash_banner = @flash_form.banner
       render "new"
     end
   end
@@ -21,11 +21,12 @@ class FlashBannersController < ApplicationController
   def edit; end
 
   def update
-    if @flash_banner.update_attributes(flash_banner_params)
-      Banner.remove_positions(@flash_banner)
-      Banner.add_positions(params[:flash_banner][:positions], @flash_banner.banner.id)
-      redirect_to @flash_banner
+    @flash_form = FlashForm.new(@flash_banner)
+
+    if @flash_form.update_attributes(flash_banner_params)
+      redirect_to @flash_form.banner
     else
+      @flash_banner = @flash_form.banner
       render "edit"
     end
   end
@@ -48,6 +49,7 @@ class FlashBannersController < ApplicationController
     def flash_banner_params
       params.require(:flash_banner).permit(:controller, :property_type,
                                            :deal_kind,  :deal_direction,
-                                           :action,     :file, :positions)
+                                           :action,     :file,
+                                           :positions => [])
     end
 end

@@ -8,12 +8,12 @@ class ImageBannersController < ApplicationController
   end
 
   def create
-    @image_banner = ImageBanner.new(image_banner_params)
+    @image_form = ImageForm.new(image_banner_params)
 
-    if @image_banner.save
-      Banner.add_positions(params[:image_banner][:positions], @image_banner.banner.id)
-      redirect_to @image_banner
+    if @image_form.save
+      redirect_to @image_form.banner
     else
+      @image_banner = @image_form.banner
       render "new"
     end
   end
@@ -21,12 +21,12 @@ class ImageBannersController < ApplicationController
   def edit; end
 
   def update
+    @image_form = ImageForm.new(@image_banner)
 
-    if @image_banner.update_attributes(image_banner_params)
-      Banner.remove_positions(@image_banner)
-      Banner.add_positions(params[:image_banner][:positions], @image_banner.banner.id)
-      redirect_to @image_banner
+    if @image_form.update_attributes(image_banner_params)
+      redirect_to @image_form.banner
     else
+      @image_banner = @image_form.banner
       render "edit"
     end
   end
@@ -56,7 +56,7 @@ class ImageBannersController < ApplicationController
       params.require(:image_banner).permit(:controller, :property_type,
                                            :deal_kind,  :deal_direction,
                                            :action,     :file,
-                                           :url)
+                                           :url,        :positions => [])
     end
 
 
