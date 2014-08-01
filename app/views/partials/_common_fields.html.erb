@@ -2,7 +2,7 @@
   <%= f.label :controller %> <br>
   <div>
     <ul class="controller">
-      <% get_hash_controllers.each do |controller, actions| %>
+      <%  all_controllers.each do |controller, actions| %>
         <li>
           <%= f.radio_button :controller, controller %>
           <%= controller %>

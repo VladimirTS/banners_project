@@ -1,5 +1,5 @@
 <div class="controller">
-  Controller:<%= banner.controller %>
+  <span>Controller:</span><%= banner.controller %>
 </div>
 
 <% if banner.action %>
@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="positions">
-  Positions:
+  <span>Positions:</span>
   <% unless banner.positions.empty? %>
     <ul>
       <% banner.positions.each do |pos|%>
@@ -20,13 +20,13 @@
 </div>
 
 <div class="deal_kind">
-  Deal kind: <%= banner.deal_kind %>
+  <span>Deal kind:</span> <%= banner.deal_kind %>
 </div>
 
 <div class="deal_direction">
-  Deal Direction:<%= banner.deal_direction %>
+  <span>Deal Direction:</span><%= banner.deal_direction %>
 </div>
 
 <div class="property_type">
-  Property type:<%=  banner.property_type %>
+  <span>Property type:</span><%=  banner.property_type %>
 </div>
