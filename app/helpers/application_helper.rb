@@ -4,7 +4,7 @@ module ApplicationHelper
     entity.positions.map(&:value)
   end
 
-  def get_hash_controllers
+  def all_controllers
     Rails.cache.read("controllers")
   end
 

@@ -1,4 +1,4 @@
-class TestThreeController < ApplicationController
+class OneController < ApplicationController
   before_action :choose_banners
 
   def first_method; end

@@ -34,6 +34,12 @@ group :development do
   gem "binding_of_caller"
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'factory_girl_rails'
+  gem 'cucumber-rails', :require => false
+end
+
 gem "activevalidators"
 gem "simple_form"
 

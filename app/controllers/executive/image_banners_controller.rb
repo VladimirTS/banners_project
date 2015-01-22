@@ -36,7 +36,7 @@ class ImageBannersController < ApplicationController
     redirect_to "/admin"
   end
 
-  # increment count click and redirect on necessary url
+  # increase count click and redirect on necessary url
   def inc_click_count_and_redir_url
     @image_banner.increment!(:click_count)
     redirect_to @image_banner.url

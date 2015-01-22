@@ -48,7 +48,6 @@ class BaseBannerForm
   private
 
     def update!
-      p "=================="
       @banner.positions = positions.map { |pos| Position.new(value: pos) }
       @banner.update_attributes(model_attributes)
     end

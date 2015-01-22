@@ -4,6 +4,7 @@ class ImageForm < BaseBannerForm
   attribute :url, String
 
   validates :url,  presence: true
+  validates :file,  presence: true
 
   def model_attributes
     { controller:     controller,

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723110519) do
+ActiveRecord::Schema.define(version: 20140802063642) do
 
   create_table "banners", force: true do |t|
     t.integer "as_banner_id"
@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(version: 20140723110519) do
     t.string  "deal_kind"
     t.string  "deal_direction"
     t.integer "count_display"
+  end
+
+  create_table "banners_positions", id: false, force: true do |t|
+    t.integer "banner_id"
+    t.integer "position_id"
   end
 
   create_table "flash_banners", force: true do |t|
@@ -47,8 +52,7 @@ ActiveRecord::Schema.define(version: 20140723110519) do
   end
 
   create_table "positions", force: true do |t|
-    t.integer "banner_id"
-    t.string  "value"
+    t.string "value"
   end
 
 end

@@ -15,24 +15,24 @@ Rails.application.routes.draw do
   deal_direction = /offer|demand/
 
   controller :test_one, property_type: property_type, deal_kind: deal_kind, deal_direction: deal_direction do
-    get "test_one/first(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_one#first_method"
-    get "test_one/second(/:property_type)(/:deal_kind)(/:deal_direction)" => "test_one#second_method"
-    get "test_one/third(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_one#third_method"
-    get "test_one/fours(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_one#fours_method"
+    get "test_one/first(/:property_type)(/:deal_kind)(/:deal_direction)"  => "one#first_method"
+    get "test_one/second(/:property_type)(/:deal_kind)(/:deal_direction)" => "one#second_method"
+    get "test_one/third(/:property_type)(/:deal_kind)(/:deal_direction)"  => "one#third_method"
+    get "test_one/fours(/:property_type)(/:deal_kind)(/:deal_direction)"  => "one#fours_method"
   end
 
   controller :test_two, property_type: property_type, deal_kind: deal_kind, deal_direction: deal_direction  do
-    get "test_two/first(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_two#first_method"
-    get "test_two/second(/:property_type)(/:deal_kind)(/:deal_direction)" => "test_two#second_method"
-    get "test_two/third(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_two#thirthird_methodd"
-    get "test_two/fours(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_two#fours_method"
+    get "test_two/first(/:property_type)(/:deal_kind)(/:deal_direction)"  => "two#first_method"
+    get "test_two/second(/:property_type)(/:deal_kind)(/:deal_direction)" => "two#second_method"
+    get "test_two/third(/:property_type)(/:deal_kind)(/:deal_direction)"  => "two#thirthird_methodd"
+    get "test_two/fours(/:property_type)(/:deal_kind)(/:deal_direction)"  => "two#fours_method"
   end
 
   controller :test_three, property_type: property_type, deal_kind: deal_kind, deal_direction: deal_direction  do
-    get "test_three/first(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_three#first_method"
-    get "test_three/second(/:property_type)(/:deal_kind)(/:deal_direction)" => "test_three#second_method"
-    get "test_three/third(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_three#third_method"
-    get "test_three/fours(/:property_type)(/:deal_kind)(/:deal_direction)"  => "test_three#fours_method"
+    get "test_three/first(/:property_type)(/:deal_kind)(/:deal_direction)"  => "three#first_method"
+    get "test_three/second(/:property_type)(/:deal_kind)(/:deal_direction)" => "three#second_method"
+    get "test_three/third(/:property_type)(/:deal_kind)(/:deal_direction)"  => "three#third_method"
+    get "test_three/fours(/:property_type)(/:deal_kind)(/:deal_direction)"  => "three#fours_method"
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

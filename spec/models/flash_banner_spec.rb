@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 describe FlashBanner do
 
   let(:flash_banner) do

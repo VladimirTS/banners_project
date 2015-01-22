@@ -6,4 +6,5 @@ class FlashBanner < ActiveRecord::Base
   validates :file, presence: true
   validates_attachment_content_type :file, content_type: "application/vnd.adobe.flash.movie"
 
+
 end

@@ -47,6 +47,9 @@ ul.controller,
 
 .show div {
   margin: 5px 0 ;
+  span {
+    font-weight: bold;
+  }
 }
 
 div.top, div.middle, div.right, div.bottom{
